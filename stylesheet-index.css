@@ -70,7 +70,7 @@ header{
     align-items: center;
 
     background-color: var(--dark-bg-color);
-    padding: 2rem;
+    padding: 1.7rem;
 }
 .nav a{
     text-decoration: none;
