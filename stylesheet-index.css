@@ -11,10 +11,33 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body{
     overflow-x: hidden;
     width: 100%;
+    cursor: none;
 }
+
+a, button, .clickable {
+    cursor: none;
+}
+.cursor-dot {
+    width: 34px;
+    height: 45px;
+
+    background-image: url('assets/mus.svg');
+    background-size: cover;
+    background-position: center;
+
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
+}
+.cursor-dot.cursor-image-hover {
+    background-image: url('assets/mus hover.svg');
+}
+
 header {
     position: absolute;
     display: flex;
@@ -28,7 +51,6 @@ header {
     background-color: transparent;
 
     z-index: 100;
-
 }
 
 .logo-button {
@@ -40,7 +62,6 @@ header {
     border: none;
     padding: 0;
 
-    cursor: pointer;
     filter: drop-shadow(5px 5px 2px var(--dark-bg-color));
 
     z-index: 100;
@@ -98,9 +119,14 @@ header {
             background-color 0.2s ease,
             color 0.2s ease;
 }
-.nav a:hover {
+.nav a:hover{
     color: var(--primary-hover-color);
 
+
+    background-color: rgba(255, 255, 255, 0.08);
+}
+nav a.page-active {
+    color: var(--primary-hover-color);
 
     background-color: rgba(255, 255, 255, 0.08);
 }
@@ -217,15 +243,21 @@ header {
 
     padding: clamp(1rem, 2vh, 2rem);
     border-radius: 50px;
-    border: 2px solid rgb(31, 9, 46);
-
-    cursor: pointer;
+    border: 2px solid var(--primary-dark-tekst-color);
 }
 .portfolio-more:hover{
     transform: scale(1.1);
     transition: transform 0.2s ease;
+}
+.portfolio-more a{
+    text-decoration: none;
+    transition: transform 0.2s ease;
+ }
+.portfolio-more a:hover{
+    transform: scale(1.1);
     color: var(--primary-hover-color);
 }
+
 
 .fill-about{
     background-color: var(--dark-bg-color);
@@ -261,6 +293,32 @@ header {
     color: var(--primary-tekst-color);
     font-family: Tahoma;
 }
+.fill-about a{
+     text-decoration: none;
+
+ }
+.see-more{
+
+    display: flex;
+    justify-content: center;
+
+    font-family: Gaegu;
+    font-size: 2.5vw;
+    font-weight: bold;
+    background-color: var(--primary-tekst-color);
+    padding: 0 1rem 0 1rem;
+    margin: 2rem;
+
+    border-radius: 50px;
+    border: 2px solid;
+
+    z-index: 7;
+}
+.see-more:hover{
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+    color: var(--primary-hover-color);
+}
 
 /*Mobil*/
 @media (max-width: 600px) {
@@ -291,34 +349,39 @@ header {
         padding: 15px 25px;
     }
 
-.about-container{
-    display: grid;
-    grid-template-columns: 1fr;
-    padding-top: 7vw;
-    padding-bottom: 7vw;
-}
-.about-container img{
-    margin: 1rem;
+    .about-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        padding-top: 7vw;
+        padding-bottom: 7vw;
+    }
+    .about-container img{
+        margin: 1rem;
+        height: clamp(70px, 40vw, 150px);
 
-}
-.about-me h2{
-    font-size: clamp(1.5rem, 5.5vw, 7rem);
-    font-family: Tahoma;
-    margin-bottom: 1rem;
 
-    color: var(--primary-nav-color);
-}
-.about-me p{
-    font-size: clamp(1rem, 4vw, 5rem);
-    padding: clamp(1rem, 4vw, 5rem);
-    text-align: center;
-    color: var(--primary-tekst-color);
-    font-family: Tahoma;
-}
+    }
+    .about-me h2{
+        font-size: clamp(1.5rem, 5.5vw, 7rem);
+        font-family: Tahoma;
+        margin-bottom: 1rem;
+
+        color: var(--primary-nav-color);
+    }
+    .about-me p{
+        font-size: clamp(1rem, 4vw, 5rem);
+        padding: clamp(1rem, 4vw, 5rem);
+        text-align: center;
+        color: var(--primary-tekst-color);
+        font-family: Tahoma;
+    }
+    .see-more{
+        margin: 0;
+        font-size: 7vw;
+    }
 }
 
 /*TABLET AND UP*/
 @media (min-width: 601px) and (max-width: 900px) {
 
 }
-
