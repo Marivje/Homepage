@@ -263,17 +263,13 @@ nav a.page-active {
 .portfolio-more:hover{
     transform: scale(1.1);
     transition: transform 0.2s ease;
+    color: var(--primary-hover-color);
     border-color: var(--primary-hover-color);
 }
 .portfolio-more a{
     text-decoration: none;
     transition: transform 0.2s ease;
  }
-.portfolio-more a:hover{
-    transform: scale(1.1);
-    color: var(--primary-hover-color);
-}
-
 
 .fill-about{
     background-color: var(--dark-bg-color);
@@ -338,15 +334,14 @@ nav a.page-active {
 
 .footer-nav{
     display: flex;
-    justify-content: start;
+    justify-content: space-evenly;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
 
     background-color: var(--light-bg-color);
-
-    padding: 15px;
 }
 .footer-nav h2{
+
     font-size: clamp(15px, 12vw, 30px);
     font-family: Gaegu;
     font-weight: bold;
@@ -354,6 +349,9 @@ nav a.page-active {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     border-bottom: 1px solid;
+}
+.footer-nav p{
+    font-size: clamp(10px, 8vw, 20px);
 }
 .footer-list{
     list-style-type: none;
@@ -373,7 +371,16 @@ nav a.page-active {
 }
 .footer-list a:hover{
     transform: scale(1.1);
-    transition: transform 0.2s ease;
+}
+.img-words{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: Gaegu;
+}
+.footer-logo{
+    width: 7rem;
 }
 
 /*Mobil*/
