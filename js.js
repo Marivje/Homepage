@@ -77,3 +77,7 @@ window.addEventListener("mouseout", function(e) {
         cursorDot.classList.remove("cursor-image-hover");
     }
 });
+// Grab / grabbing cursor
+window.addEventListener("mousedown", function () {
+    cursorDot.classList.add("cursor-grabbing");
+});

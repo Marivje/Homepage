@@ -12,6 +12,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body{
     overflow-x: hidden;
     width: 100%;
@@ -202,7 +206,8 @@ nav a.page-active {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: var(--light-bg-color);
+    background-image: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,0.3)),
+    url("assets/paper-bg.jpg");
 
     padding: clamp(1rem, 5vw, 5rem);
 
